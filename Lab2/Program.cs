@@ -57,7 +57,10 @@ public class Program
         bool answer = false;
 
         // code here
-
+        int r = 2;
+        if (Math.Abs(x*x + y*y - r*r) <= 0.0001){
+            answer = true;
+        }
         // end
 
         return answer;
@@ -67,7 +70,9 @@ public class Program
         bool answer = false;
 
         // code here
-
+        if (y>=0 && (y+Math.Abs(x))<= 1){
+            answer = true;
+        }
         // end
 
         return answer;
@@ -77,7 +82,22 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (a > 0){
+            if (a>b){
+                answer = a;
+            }
+            else{
+                answer = b;
+            }
+        }
+        else{
+            if (a>b){
+                answer = b;
+            }
+            else{
+                answer = a;
+            }
+        }
         // end
 
         return answer;
@@ -87,7 +107,19 @@ public class Program
         double answer = 0;
 
         // code here
-
+        double n;
+        if (a>b){
+            n = b;
+        }
+        else{
+            n = a;
+        }
+        if (c>n){
+            answer = c;
+        }
+        else{
+            answer = n;
+        }
         // end
 
         return answer;
@@ -97,7 +129,11 @@ public class Program
         bool answer = false;
 
         // code here
-
+        double cube_diag = Math.Sqrt(s)*Math.Sqrt(2)*0.5;
+        double circle_radius = Math.Sqrt(r/Math.PI);
+        if (cube_diag < circle_radius){
+            answer = true;
+        }
         // end
 
         return answer;
@@ -107,7 +143,11 @@ public class Program
         bool answer = false;
 
         // code here
-
+        double cube_side = Math.Sqrt(s)/2;
+        double circle_radius = Math.Sqrt(r/Math.PI);
+        if (circle_radius < cube_side){
+            answer = true;
+        }
         // end
 
         return answer;
@@ -117,7 +157,12 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (Math.Abs(x) > 1){
+            answer = 1;
+        }
+        else{
+            answer = Math.Abs(x);
+        }
         // end
 
         return answer;
@@ -127,7 +172,13 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (Math.Abs(x) >= 1){
+            answer = 0;
+        }
+        else{
+            answer = x*x-1;
+        }
+        // end
         // end
 
         return answer;
@@ -137,7 +188,15 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (x<=-1){
+            answer = 0;
+        }
+        else if (-1 < x && x<=0){
+            answer = 1 + x;
+        }
+        else{
+            answer = 1;
+        }
         // end
 
         return answer;
@@ -147,7 +206,15 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (x <= -1){
+            answer = 1;
+        }
+        else if (x > 1){
+            answer = -1;
+        }
+        else{
+            answer = -x;
+        }
         // end
 
         return answer;
