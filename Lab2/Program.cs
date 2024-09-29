@@ -21,7 +21,7 @@ public class Program
         //program.Task_1_9(0.9);
         //program.Task_1_10(0.9);
         //program.Task_2_1(10);
-        //program.Task_2_2(5, 3, 2, 1);
+        program.Task_2_2(5, 3, 2, 1);
         //program.Task_2_2(5, 1.5, 1.5, 1);
         //program.Task_2_2(5, 1, 3, 1);
         //program.Task_2_3(10);
@@ -228,6 +228,11 @@ public class Program
 
         // code here
 
+        for (int i = 0; i<10;i++){
+            answer += double.Parse(Console.ReadLine());
+        }
+        answer /= 10.0;
+        Console.WriteLine(answer);
         // end
 
         // for test input in console: 168, 147, 174, 154, 180, 149, 166, 160, 175, 161
@@ -237,9 +242,17 @@ public class Program
     public int Task_2_2(int n, double r, double a, double b)
     {
         int answer = 0;
-
         // code here
+        for (int i = 0; i<n; i++)
+        {
+            double x = double.Parse(Console.ReadLine());
+            double y = double.Parse(Console.ReadLine());
 
+            if (x*x+y*y<r*r){
+                answer++;
+            }
+        }
+        Console.WriteLine(answer);
         // end
 
         // for test input in console: 1.2 0.7, 2 2, 4.5 0.1, -1 1.5, -2.5 -0.5
