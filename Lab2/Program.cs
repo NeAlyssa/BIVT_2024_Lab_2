@@ -1,4 +1,4 @@
-using Microsoft.VisualBasic;
+﻿using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,16 +10,16 @@ public class Program
     public static void Main()
     {
         Program program = new Program();
-        //program.Task_1_1(0.9, 1.23);
-        //program.Task_1_2(0.9, 1.23);
-        //program.Task_1_3(0.9, 1.23);
-        //program.Task_1_4(0.9, 1.23, -0.1);
-        //program.Task_1_5(0.9, 1.23);
-        //program.Task_1_6(0.9, 1.23);
-        //program.Task_1_7(0.9);
-        //program.Task_1_8(0.9);
-        //program.Task_1_9(0.9);
-        //program.Task_1_10(0.9);
+        program.Task_1_1(0.9, 1.23);
+        program.Task_1_2(0.9, 1.23);
+        program.Task_1_3(0.9, 1.23);
+        program.Task_1_4(0.9, 1.23, -0.1);
+        program.Task_1_5(0.9, 1.23);
+        program.Task_1_6(0.9, 1.23);
+        program.Task_1_7(0.9);
+        program.Task_1_8(0.9);
+        program.Task_1_9(0.9);
+        program.Task_1_10(0.9);
         //program.Task_2_1(10);
         //program.Task_2_2(5, 3, 2, 1);
         //program.Task_2_2(5, 1.5, 1.5, 1);
@@ -27,14 +27,14 @@ public class Program
         //program.Task_2_3(10);
         //program.Task_2_4(5, 1, 2);
         //program.Task_2_5(10, 30);
-        //program.Task_2_6(5);
-        //program.Task_2_7(5);
-        //program.Task_2_8(10);
-        //program.Task_2_9(10);
-        //program.Task_2_10(10);
-        //program.Task_2_11(10);
-        //program.Task_2_12(10, 0);
-        //program.Task_2_13(10, 5, 0);
+        program.Task_2_6(5);
+        program.Task_2_7(5);
+        program.Task_2_8(10);
+        program.Task_2_9(10);
+        program.Task_2_10(10);
+        program.Task_2_11(10);
+        program.Task_2_12(10, 0);
+        program.Task_2_13(10, 5, 0);
         //program.Task_3_1();
         //program.Task_3_2(3, 2, 1);
         //program.Task_3_2(1.5, 1.5, 1);
@@ -57,7 +57,12 @@ public class Program
         bool answer = false;
 
         // code here
-
+        double r = 2;
+        if (Math.Abs(x * x + y * y - r * r) <= Math.Pow(10, -3))
+        {
+            answer = true;
+        }
+        
         // end
 
         return answer;
@@ -67,6 +72,10 @@ public class Program
         bool answer = false;
 
         // code here
+        if (y >= 0 && y + Math.Abs(x) <= 1)
+        {
+            answer = true;
+        }
 
         // end
 
@@ -77,7 +86,7 @@ public class Program
         double answer = 0;
 
         // code here
-
+        answer = (a > 0) ? Math.Max(a, b) : Math.Min(a, b);
         // end
 
         return answer;
@@ -87,7 +96,7 @@ public class Program
         double answer = 0;
 
         // code here
-
+        answer = Math.Max(Math.Min(a, b), c);
         // end
 
         return answer;
@@ -97,7 +106,9 @@ public class Program
         bool answer = false;
 
         // code here
-
+        double d = 2*Math.Sqrt(r / double.Pi);
+        double d1= Math.Sqrt(s+s);
+        if (d1 <= d) answer = true;
         // end
 
         return answer;
@@ -107,7 +118,9 @@ public class Program
         bool answer = false;
 
         // code here
-
+        double d = 2 * Math.Sqrt(r / double.Pi);
+        double d1 = Math.Sqrt(s);
+        if (d<=d1) answer = true;
         // end
 
         return answer;
@@ -117,7 +130,7 @@ public class Program
         double answer = 0;
 
         // code here
-
+        answer = (Math.Abs(x) > 1) ? 1 : Math.Abs(x);
         // end
 
         return answer;
@@ -127,7 +140,7 @@ public class Program
         double answer = 0;
 
         // code here
-
+        answer = (Math.Abs(x) >= 1) ? 0 : x*x-1 ;
         // end
 
         return answer;
@@ -137,7 +150,12 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (x <= -1) answer = 0;
+        else
+        {
+            if (x > -1 && x <= 0) answer = 1 + x;
+            else answer = 1;
+        }
         // end
 
         return answer;
@@ -147,7 +165,12 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (x <= -1) answer = 1;
+        else
+        {
+            if (x > -1 && x <= 1) answer = -x;
+            else answer = -1;
+        }
         // end
 
         return answer;
@@ -158,11 +181,17 @@ public class Program
     public double Task_2_1(int n)
     {
         double answer = 0;
-
-        // code here
-
-        // end
-
+        double s = 0;
+        double x;
+        
+        for (int i=1; i<=n; i++)
+        {
+            x = int.Parse(Console.ReadLine());
+            s += x;
+        }
+        
+        answer = s / n;
+        Console.WriteLine(answer);
         // for test input in console: 168, 147, 174, 154, 180, 149, 166, 160, 175, 161
 
         return answer;
@@ -170,11 +199,19 @@ public class Program
     public int Task_2_2(int n, double r, double a, double b)
     {
         int answer = 0;
-
+        double x, y;
         // code here
+        for (int i = 1; i <= n; i++)
+        {
+            Console.WriteLine("Введите x");
+            x = double.Parse(Console.ReadLine());
+            Console.WriteLine("Введите y");
+            y = double.Parse(Console.ReadLine());
+            if (Math.Abs(x-a)<=r && Math.Abs(y-b)<=r) answer++;
 
+        }
         // end
-
+        Console.WriteLine(answer);
         // for test input in console: 1.2 0.7, 2 2, 4.5 0.1, -1 1.5, -2.5 -0.5
 
         return answer;
@@ -182,13 +219,23 @@ public class Program
     public double Task_2_3(int n)
     {
         double answer = 0;
-
+        int k = 0;
+        double x;
         // code here
-
+        for ( int i = 1; i<=n; i++)
+        {
+            Console.WriteLine("Введите вес ученика");
+            x= double.Parse(Console.ReadLine());
+            if (x<30)
+            {
+                k++;
+            }
+        }
         // end
-
+        answer = k * 0.2;
+        Console.WriteLine(answer);
         // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
-
+        
         return answer;
     }
     public int Task_2_4(int n, double r1, double r2)
@@ -196,9 +243,17 @@ public class Program
         int answer = 0;
 
         // code here
-
+        double x, y;
+        for (int i = 1; i<=n; i++)
+        {
+            Console.WriteLine("Введите x");
+            x = double.Parse(Console.ReadLine());
+            Console.WriteLine("Введите y");
+            y = double.Parse(Console.ReadLine());
+            if (x*x+y*y<=r2*r2 && x*x+y*y>=r1*r1) answer++;
+        }
         // end
-
+        Console.WriteLine(answer);
         // for test input in console: 1.2 0.7, 2 2, 4.5 0.1, -1 1.5, -0.5 -0.5
 
         return answer;
@@ -206,11 +261,15 @@ public class Program
     public int Task_2_5(int n, double norm)
     {
         int answer = 0;
-
+        double x;
         // code here
-
+        for (int i = 1; i<=n;i++)
+        {
+            x= double.Parse(Console.ReadLine());
+            if (x>=norm) answer++;
+        }
         // end
-
+        Console.WriteLine(answer);
         // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
 
         return answer;
@@ -220,9 +279,17 @@ public class Program
         int answer = 0;
 
         // code here
-
+        double x, y;
+        for (int i = 1; i<=n;i++)
+        {
+            Console.WriteLine("Введите x");
+            x = double.Parse(Console.ReadLine());
+            Console.WriteLine("Введите y");
+            y = double.Parse(Console.ReadLine());
+            if (x>=0 && x<=double.Pi && y<=Math.Sin(x)) answer++;
+        }
         // end
-
+        Console.WriteLine(answer);
         // for test input in console: 1.2 0.7, 2 0.2, 0.5 0.9, -1 1.5, 0.5 0.1
 
         return answer;
@@ -249,7 +316,7 @@ public class Program
 
         // end
 
-        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -0.5
+        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
 
         return (answer, answerLength);
     }
@@ -415,7 +482,7 @@ public class Program
 
         // end
 
-        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -0.5
+        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
         // answer should be equal to the task_2_8 answer
 
         return (answer, answerLength);
