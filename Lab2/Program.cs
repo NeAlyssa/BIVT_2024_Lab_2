@@ -5,7 +5,6 @@ using System.ComponentModel;
 using System.Diagnostics.Metrics;
 using System.Globalization;
 using System.Runtime.InteropServices;
-using System.Runtime.Intrinsics.X86;
 
 public class Program
 {
@@ -27,11 +26,11 @@ public class Program
         //program.Task_2_2(5, 1.5, 1.5, 1);
         //program.Task_2_2(5, 1, 3, 1);
         //program.Task_2_3(10);
-        //program.Task_2_4(5, 1, 2);
+        //program.Task_2_4(4, 1, 2);
         //program.Task_2_5(10, 30);
-        //program.Task_2_6(5);
-        //program.Task_2_7(5);
-        //program.Task_2_8(10);
+        //program.Task_2_6(3);
+        //program.Task_2_7(2);
+        //program.Task_2_8(5);
         //program.Task_2_9(10);
         //program.Task_2_10(10);
         //program.Task_2_11(10);
@@ -40,7 +39,7 @@ public class Program
         //program.Task_3_1();
         //program.Task_3_2(3, 2, 1);
         //program.Task_3_2(1.5, 1.5, 1);
-        //program.Task_3_2(3, 2, 1);
+        //program.Task_3_2(1, 3, 1);
         //program.Task_3_3();
         //program.Task_3_4(1, 2);
         //program.Task_3_5(30);
@@ -49,7 +48,7 @@ public class Program
         //program.Task_3_8();
         //program.Task_3_9();
         //program.Task_3_10();
-        program.Task_3_11();
+        //program.Task_3_11();
         //program.Task_3_12(10, 0);
         //program.Task_3_13(10, 5, 0);
     }
@@ -219,10 +218,9 @@ public class Program
         // code here
         double x, y;
         for (int i = 0; i < n; i++)
-        {
-            string[] input = Console.ReadLine().Split(" ");
-            x = double.Parse(input[0], CultureInfo.InvariantCulture);
-            y = double.Parse(input[1], CultureInfo.InvariantCulture);
+        { 
+            x = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            y = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             if ((x - a) * (x - a) + (y - b) * (y - b) < r * r)
                 answer++;
         }
@@ -249,6 +247,7 @@ public class Program
 
         }
         Console.WriteLine(answer);
+        answer = Math.Round(answer, 1);
         // end
 
         // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
@@ -263,9 +262,8 @@ public class Program
         double x, y;
         for (int i = 0; i < n; i++)
         {
-            string[] input = Console.ReadLine().Split(" ");
-            x = double.Parse(input[0], CultureInfo.InvariantCulture);
-            y = double.Parse(input[1], CultureInfo.InvariantCulture);
+            x = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            y = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             if ((x * x + y * y < r2 * r2) && (x * x + y * y > r1 * r1))
                 answer++;
         }
@@ -306,9 +304,8 @@ public class Program
         double x, y;
         for (int i = 0; i < n; i++)
         {
-            string[] input = Console.ReadLine().Split(" ");
-            x = double.Parse(input[0], CultureInfo.InvariantCulture);
-            y = double.Parse(input[1], CultureInfo.InvariantCulture);
+            x = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            y = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             if (x >= 0 && x <= Math.PI && y >= 0 && y <= Math.Sin(x))
                 answer++;
         }
@@ -328,9 +325,8 @@ public class Program
         double x, y;
         for (int i = 0; i < n; i++)
         {
-            string[] input = Console.ReadLine().Split(" ");
-            x = double.Parse(input[0], CultureInfo.InvariantCulture);
-            y = double.Parse(input[1], CultureInfo.InvariantCulture);
+            x = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            y = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             if (x >= 0 && y >= 0)
             {
                 Console.WriteLine("I");
@@ -350,6 +346,8 @@ public class Program
                 Console.WriteLine("IV");
             }
         }
+        Console.WriteLine(answer1);
+        Console.WriteLine(answer3);
         // end
 
         // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
@@ -365,9 +363,8 @@ public class Program
         double x, y;
         for (int i = 0; i < n; i++)
         {
-            string[] input = Console.ReadLine().Split(" ");
-            x = double.Parse(input[0], CultureInfo.InvariantCulture);
-            y = double.Parse(input[1], CultureInfo.InvariantCulture);
+            x = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            y = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             double dist = Math.Sqrt(x * x + y * y);
             if (dist < answerLength)
             {
@@ -491,16 +488,15 @@ public class Program
         // code here;
         if (A <= 0 || B <= 0)
             return 0;
-
+        if (type < 0 || type > 2)
+            return 0;
         switch (type)
         {
             case 0:
                 answer = A * B;
                 break;
             case 1:
-                if (A >= B)
-                    return 0;
-                answer = (B * B - A * A) * Math.PI;
+                answer = Math.Abs(B * B - A * A) * Math.PI;
                 break;
             case 2:
                 if (A >= 2 * B)
