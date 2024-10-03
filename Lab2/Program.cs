@@ -20,7 +20,7 @@ public class Program
         //program.Task_1_8(0.9);
         //program.Task_1_9(0.9);
         //program.Task_1_10(0.9);
-        //program.Task_2_1(10);
+        program.Task_2_1(10);
         //program.Task_2_2(5, 3, 2, 1);
         //program.Task_2_2(5, 1.5, 1.5, 1);
         //program.Task_2_2(5, 1, 3, 1);
@@ -57,17 +57,21 @@ public class Program
         bool answer = false;
 
         // code here
+        if (Math.Abs(x * x + y * y - 4) <= 0.001)
+            answer = true;
+        else
+            answer = false;
+            // end
 
-        // end
-
-        return answer;
+            return answer;
     }
     public bool Task_1_2(double x, double y)
     {
         bool answer = false;
 
         // code here
-
+        if (y >= 0 && (y + Math.Abs(x)) <= 1)
+            answer = true;
         // end
 
         return answer;
@@ -77,6 +81,17 @@ public class Program
         double answer = 0;
 
         // code here
+        answer = b;
+        if (a > 0)
+        {
+            if (a > b)
+                answer = a;
+        }
+        else
+        {
+            if (a < b)
+                answer = a;
+        }
 
         // end
 
@@ -87,7 +102,11 @@ public class Program
         double answer = 0;
 
         // code here
-
+        answer = a;
+        if (b < answer)
+            answer = b;
+        if (c > answer)
+            answer = c;
         // end
 
         return answer;
@@ -97,7 +116,12 @@ public class Program
         bool answer = false;
 
         // code here
-
+        double a, b;
+        double pi = 3.14;
+        a = Math.Sqrt(r / pi);
+        b = Math.Sqrt(s) / 2;
+        if ((Math.Sqrt(2) * b) <= a)
+            answer = true;
         // end
 
         return answer;
@@ -107,7 +131,12 @@ public class Program
         bool answer = false;
 
         // code here
-
+        double a, b;
+        double pi = 3.14;
+        a = Math.Sqrt(r / pi);
+        b = Math.Sqrt(s) / 2;
+        if (a <= b)
+            answer = true;
         // end
 
         return answer;
@@ -117,7 +146,11 @@ public class Program
         double answer = 0;
 
         // code here
-
+        x = Math.Abs(x);
+        if (x > 1)
+            answer = 1;
+        else
+            answer = x;
         // end
 
         return answer;
@@ -127,7 +160,11 @@ public class Program
         double answer = 0;
 
         // code here
-
+        x = Math.Abs(x);
+        if (x >= 1)
+            answer = 0;
+        else
+            answer = x * x - 1;
         // end
 
         return answer;
@@ -137,7 +174,12 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (x <= -1)
+            answer = 0;
+        else if (x <= 0)
+            answer = 1 + x;
+        else
+            answer = 1;
         // end
 
         return answer;
@@ -147,7 +189,12 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (x <= -1)
+            answer = 1;
+        else if (x <= 1)
+            answer = -x;
+        else
+            answer = -1;
         // end
 
         return answer;
@@ -160,7 +207,14 @@ public class Program
         double answer = 0;
 
         // code here
-
+        double x, s = 0;
+        for (int i = 0; i < n; i++)
+        {
+            x = Double.Parse(Console.ReadLine());
+            s += x;
+        }
+        answer = s / n;
+        Console.WriteLine($"{answer}");
         // end
 
         // for test input in console: 168, 147, 174, 154, 180, 149, 166, 160, 175, 161
