@@ -21,12 +21,12 @@ public class Program
         //program.Task_1_9(0.9);
         //program.Task_1_10(0.9);
         //program.Task_2_1(10);
-        program.Task_2_2(5, 3, 2, 1);
+        //program.Task_2_2(5, 3, 2, 1);
         //program.Task_2_2(5, 1.5, 1.5, 1);
         //program.Task_2_2(5, 1, 3, 1);
         //program.Task_2_3(10);
         //program.Task_2_4(5, 1, 2);
-        //program.Task_2_5(10, 30);
+        program.Task_2_5(10, 30);
         //program.Task_2_6(5);
         //program.Task_2_7(5);
         //program.Task_2_8(10);
@@ -227,9 +227,10 @@ public class Program
         double answer = 0;
 
         // code here
-
+        double x;
         for (int i = 0; i<10;i++){
-            answer += double.Parse(Console.ReadLine());
+            double.TryParse(Console.ReadLine(), out x);
+            answer += x;
         }
         answer /= 10.0;
         Console.WriteLine(answer);
@@ -243,10 +244,11 @@ public class Program
     {
         int answer = 0;
         // code here
+        double x, y;
         for (int i = 0; i<n; i++)
         {
-            double x = double.Parse(Console.ReadLine());
-            double y = double.Parse(Console.ReadLine());
+            double.TryParse(Console.ReadLine(), out x);
+            double.TryParse(Console.ReadLine(), out y);
 
             if (x*x+y*y<r*r){
                 answer++;
@@ -264,7 +266,16 @@ public class Program
         double answer = 0;
 
         // code here
-
+        // double[] test = new double[10];
+        for (int i = 0; i < n; i++){
+            double.TryParse(Console.ReadLine(), out double x);
+            if (x < 30){
+                answer += 0.2;
+                // test[i] = x;
+            }
+        }
+        Console.WriteLine($"answer: {answer}");
+        // Array.ForEach(test, Console.WriteLine);
         // end
 
         // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
@@ -276,7 +287,16 @@ public class Program
         int answer = 0;
 
         // code here
-
+        double x, y;
+        for (int i = 0; i< n; i++){
+            double.TryParse(Console.ReadLine(), out x);
+            double.TryParse(Console.ReadLine(), out y);
+            
+            if ((x*x + y*y > r1*r1)&&(x*x + y*y < r2*r2)){
+                answer++;
+            }
+        }
+        Console.WriteLine(answer);
         // end
 
         // for test input in console: 1.2 0.7, 2 2, 4.5 0.1, -1 1.5, -0.5 -0.5
@@ -288,7 +308,14 @@ public class Program
         int answer = 0;
 
         // code here
-
+        double r = 0;
+        for (int i = 0; i < n; i++){
+            double.TryParse(Console.ReadLine(),  out r);
+            if (r >= norm){
+                answer ++;
+            }
+        }              
+        Console.WriteLine(answer);
         // end
 
         // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
