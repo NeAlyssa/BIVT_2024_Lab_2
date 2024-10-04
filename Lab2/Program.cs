@@ -26,13 +26,13 @@ public class Program
         //program.Task_2_2(5, 1, 3, 1);
         //program.Task_2_3(10);
         //program.Task_2_4(5, 1, 2);
-        program.Task_2_5(10, 30);
-        //program.Task_2_6(5);
-        //program.Task_2_7(5);
+        //program.Task_2_5(10, 30); -----------
+        //program.Task_2_6(5); ++++++++++++++
+        //program.Task_2_7(5); ??????????
         //program.Task_2_8(10);
         //program.Task_2_9(10);
         //program.Task_2_10(10);
-        //program.Task_2_11(10);
+        //program.Task_2_11(10);????????????  kinda not sure about this one chief
         //program.Task_2_12(10, 0);
         //program.Task_2_13(10, 5, 0);
         //program.Task_3_1();
@@ -327,7 +327,15 @@ public class Program
         int answer = 0;
 
         // code here
-
+        double x, y;
+        for (int i = 0; i < n; i++){
+            double.TryParse(Console.ReadLine(), out x);
+            double.TryParse(Console.ReadLine(), out y);
+            if ( (x > 0) && (x < Math.PI) && (y>0) && (y < Math.Sin(x)) ){
+                answer++;
+            }
+        }
+        //Console.WriteLine(answer);
         // end
 
         // for test input in console: 1.2 0.7, 2 0.2, 0.5 0.9, -1 1.5, 0.5 0.1
@@ -340,7 +348,20 @@ public class Program
         int answer3 = 0;
 
         // code here
+        double x, y;
+        for (int i = 0; i < n; i++){
+            double.TryParse(Console.ReadLine(), out x);
+            double.TryParse(Console.ReadLine(), out y);
 
+            if (x > 0 && y > 0){
+                answer1++;
+                //Console.WriteLine(1);
+            }
+            if (x < 0 && y < 0){
+                answer3++;
+                //Console.WriteLine(3);
+            }
+        }
         // end
 
         // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
@@ -353,7 +374,17 @@ public class Program
         double answerLength = double.MaxValue;
 
         // code here
-
+        double x, y;
+        double l = 1000000;
+        for (int i = 1; i <= n; i++){
+            double.TryParse(Console.ReadLine(), out x);
+            double.TryParse(Console.ReadLine(), out y);
+            if (Math.Sqrt(x*x + y*y) < l){
+                l = Math.Sqrt(x*x + y*y);
+                answer = i;
+            }
+        }
+        Console.WriteLine($"point number {answer} that is {l} far away from (0, 0)");
         // end
 
         // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
@@ -365,7 +396,15 @@ public class Program
         double answer = double.MaxValue;
 
         // code here
-
+        answer = 0;
+        double r;
+        for (int i = 0; i < n; i++){
+            double.TryParse(Console.ReadLine(), out r);
+            if (r > answer){
+                answer = r;
+            }
+        }
+        Console.WriteLine(answer);
         // end
 
         // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
@@ -377,7 +416,18 @@ public class Program
         int answer = 0;
 
         // code here;
-
+        int g1, g2, g3, g4;
+        for (int i = 0; i < n; i++){
+            int.TryParse(Console.ReadLine(), out g1);
+            int.TryParse(Console.ReadLine(), out g2);
+            int.TryParse(Console.ReadLine(), out g3);
+            int.TryParse(Console.ReadLine(), out g4);
+            answer++;
+            if ( g1 > 3 && g2 > 3 && g3 > 3 && g4 > 3){
+                answer--;
+            }
+        }
+        Console.WriteLine(answer);
         // end
 
         // for test input in console: 5, 3, 3, 4, 5, 2, 4, 5, 5, 4, 5, 4, 2, 5, 3, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 2, 5, 2, 2, 4, 2, 5, 4, 5, 4
@@ -390,7 +440,19 @@ public class Program
         double avg = 0.0;
 
         // code here;
-
+        int g1, g2, g3, g4;
+        for (int i = 0; i < n; i++){ 
+            int.TryParse(Console.ReadLine(), out g1);
+            int.TryParse(Console.ReadLine(), out g2);
+            int.TryParse(Console.ReadLine(), out g3);
+            int.TryParse(Console.ReadLine(), out g4);
+            avg += g1 + g2 + g3 + g4;
+            if (g1 == 2 || g2 == 2 || g3 == 2|| g4 == 2){
+                answer++;
+            }
+        }
+        avg /= n;
+        
         // end
 
         // for test input in console: 5, 3, 3, 4, 5, 2, 4, 5, 5, 4, 5, 4, 2, 5, 3, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 2, 5, 2, 2, 4, 2, 5, 4, 5, 4
@@ -402,7 +464,7 @@ public class Program
         double answer = 0;
 
         // code here;
-
+        
         // end
 
         return answer;
