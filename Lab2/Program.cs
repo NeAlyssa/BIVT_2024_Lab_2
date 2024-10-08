@@ -21,7 +21,7 @@ public class Program
         //program.Task_1_9(0.9);
         //program.Task_1_10(0.9);
         //program.Task_2_1(10);
-        //program.Task_2_2(5, 3, 2, 1);
+        program.Task_2_2(5, 3, 2, 1);
         //program.Task_2_2(5, 1.5, 1.5, 1);
         //program.Task_2_2(5, 1, 3, 1);
         //program.Task_2_3(10);
@@ -57,7 +57,9 @@ public class Program
         bool answer = false;
 
         // code here
-
+        double r = 2;
+        if (Math.Abs(x * x + y * y - r * r) <= 0.001)   
+            answer = true;
         // end
 
         return answer;
@@ -67,7 +69,8 @@ public class Program
         bool answer = false;
 
         // code here
-
+        if ((y <= x + 1) && (y <= 1 - x) && (y >= 0))
+                answer = true;
         // end
 
         return answer;
@@ -77,7 +80,14 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (a > 0)
+        {
+            answer = (a > b) ? a : b;
+        }
+        else
+        {
+            answer = (a < b) ? a : b;
+        }
         // end
 
         return answer;
@@ -87,7 +97,14 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (a < b)
+        {
+            answer = (a < c) ? c : a;
+        }
+        else
+        {
+            answer = (b < c) ? c : b;
+        }
         // end
 
         return answer;
@@ -97,7 +114,11 @@ public class Program
         bool answer = false;
 
         // code here
+        double diagonal = Math.Sqrt(2) * Math.Sqrt(s);
+        double cirleDiameter = 2 * Math.Sqrt(r / Math.PI);
 
+        if (diagonal <= cirleDiameter)
+            answer = true;
         // end
 
         return answer;
@@ -107,7 +128,11 @@ public class Program
         bool answer = false;
 
         // code here
+        double sqSide = Math.Sqrt(s);
+        double cirleDiameter = 2 * Math.Sqrt(r / Math.PI);
 
+        if (cirleDiameter <= sqSide)
+            answer = true;
         // end
 
         return answer;
@@ -117,7 +142,7 @@ public class Program
         double answer = 0;
 
         // code here
-
+        answer = (Math.Abs(x) > 1) ? 1 : Math.Abs(x);
         // end
 
         return answer;
@@ -127,7 +152,7 @@ public class Program
         double answer = 0;
 
         // code here
-
+        answer = (Math.Abs(x) >= 1) ? 0 : (x * x - 1);
         // end
 
         return answer;
@@ -137,7 +162,18 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (x > 0)
+        {
+            answer = 1;
+        }
+        else if(-1 < x && x <= 0)
+        {
+            answer = 1 + x;
+        }
+        else
+        {
+            answer = 0;
+        }
         // end
 
         return answer;
@@ -147,7 +183,18 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (x > 1)
+        {
+            answer = -1;
+        }
+        else if (-1 < x && x <= 1)
+        {
+            answer = -x;
+        }
+        else
+        {
+            answer = 1;
+        }
         // end
 
         return answer;
@@ -160,7 +207,15 @@ public class Program
         double answer = 0;
 
         // code here
+        double sum = 0, height;
+        for (int i = 0; i < n; i++)
+        {
+            height = double.Parse(Console.ReadLine());
+            sum += height;
+        }
 
+        answer = sum / n;
+        Console.WriteLine("\nСредний рост класса: " + answer);
         // end
 
         // for test input in console: 168, 147, 174, 154, 180, 149, 166, 160, 175, 161
@@ -172,7 +227,15 @@ public class Program
         int answer = 0;
 
         // code here
+        double x, y;
+        for (int i = 0; i < n; i++)
+        {
+           //ввод данных сделать
 
+            if ((x - a) * (x - a) + (y - b) * (y - b) <= r * r)
+                answer ++;  
+        }
+        Console.WriteLine(answer);
         // end
 
         // for test input in console: 1.2 0.7, 2 2, 4.5 0.1, -1 1.5, -2.5 -0.5
