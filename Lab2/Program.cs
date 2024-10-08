@@ -20,19 +20,19 @@ public class Program
         //program.Task_1_8(0.9);
         //program.Task_1_9(0.9);
         //program.Task_1_10(0.9);
-        //program.Task_2_1(10);
+        //program.Task_2_1(10); 
         //program.Task_2_2(5, 3, 2, 1);
         //program.Task_2_2(5, 1.5, 1.5, 1);
-        //program.Task_2_2(5, 1, 3, 1);
-        //program.Task_2_3(10);
-        //program.Task_2_4(5, 1, 2);
-        //program.Task_2_5(10, 30); -----------
-        //program.Task_2_6(5); ++++++++++++++
-        //program.Task_2_7(5); ??????????
-        //program.Task_2_8(10);
-        //program.Task_2_9(10);
-        //program.Task_2_10(10);
-        //program.Task_2_11(10);????????????  kinda not sure about this one chief
+        //program.Task_2_2(5, 1, 3, 1); 
+        //program.Task_2_3(6); 
+        //program.Task_2_4(4, 1, 3); 
+        //program.Task_2_5(10, 25.2); 
+        //program.Task_2_6(5); 
+        //program.Task_2_7(5); 
+        //program.Task_2_8(5);
+        //program.Task_2_9(8); 
+        //program.Task_2_10(8); 
+        //program.Task_2_11(8); 
         //program.Task_2_12(10, 0);
         //program.Task_2_13(10, 5, 0);
         //program.Task_3_1();
@@ -250,7 +250,7 @@ public class Program
             double.TryParse(Console.ReadLine(), out x);
             double.TryParse(Console.ReadLine(), out y);
 
-            if (x*x+y*y<r*r){
+            if ((x-a)*(x-a) + (y-b)*(y-b)<r*r){
                 answer++;
             }
         }
@@ -266,16 +266,13 @@ public class Program
         double answer = 0;
 
         // code here
-        // double[] test = new double[10];
         for (int i = 0; i < n; i++){
             double.TryParse(Console.ReadLine(), out double x);
             if (x < 30){
                 answer += 0.2;
-                // test[i] = x;
             }
         }
         Console.WriteLine($"answer: {answer}");
-        // Array.ForEach(test, Console.WriteLine);
         // end
 
         // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
@@ -311,7 +308,7 @@ public class Program
         double r = 0;
         for (int i = 0; i < n; i++){
             double.TryParse(Console.ReadLine(),  out r);
-            if (r >= norm){
+            if (r < norm){
                 answer ++;
             }
         }              
@@ -355,13 +352,14 @@ public class Program
 
             if (x > 0 && y > 0){
                 answer1++;
-                //Console.WriteLine(1);
+                Console.WriteLine(1);
             }
             if (x < 0 && y < 0){
                 answer3++;
-                //Console.WriteLine(3);
+                Console.WriteLine(3);
             }
         }
+        Console.WriteLine($"first quarter: {answer1}, third quarter: {answer3}");
         // end
 
         // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
@@ -384,6 +382,7 @@ public class Program
                 answer = i;
             }
         }
+        l = Math.Round(l, 2);
         Console.WriteLine($"point number {answer} that is {l} far away from (0, 0)");
         // end
 
@@ -396,11 +395,10 @@ public class Program
         double answer = double.MaxValue;
 
         // code here
-        answer = 0;
         double r;
         for (int i = 0; i < n; i++){
             double.TryParse(Console.ReadLine(), out r);
-            if (r > answer){
+            if (r < answer){
                 answer = r;
             }
         }
@@ -427,7 +425,7 @@ public class Program
                 answer--;
             }
         }
-        Console.WriteLine(answer);
+        Console.WriteLine($"answer: {answer}");
         // end
 
         // for test input in console: 5, 3, 3, 4, 5, 2, 4, 5, 5, 4, 5, 4, 2, 5, 3, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 2, 5, 2, 2, 4, 2, 5, 4, 5, 4
@@ -451,8 +449,8 @@ public class Program
                 answer++;
             }
         }
-        avg /= n;
-        
+        avg /= n*4;
+        Console.WriteLine($"{answer} students and the avg is {avg}");
         // end
 
         // for test input in console: 5, 3, 3, 4, 5, 2, 4, 5, 5, 4, 5, 4, 2, 5, 3, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 2, 5, 2, 2, 4, 2, 5, 4, 5, 4
@@ -464,7 +462,15 @@ public class Program
         double answer = 0;
 
         // code here;
-        
+        if (type == 1){
+            answer = r*r;
+        }
+        else if (type == 2){
+            answer = Math.PI*r*r;
+        }
+        else{
+            answer = r*r*Math.Sqrt(3)*0.25;
+        }
         // end
 
         return answer;
