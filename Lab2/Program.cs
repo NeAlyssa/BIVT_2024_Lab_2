@@ -1,4 +1,4 @@
-using Microsoft.VisualBasic;
+    using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -217,7 +217,7 @@ public class Program
         }
 
         answer = sum / n;
-        Console.WriteLine("\nСредний рост класса: " + answer);
+        Console.WriteLine("\РЎСЂРµРґРЅРёР№ СЂРѕСЃС‚ РєР»Р°СЃСЃР°: " + answer);
         // end
 
         return answer;
@@ -334,24 +334,24 @@ public class Program
 
             if (x > 0 && y > 0)
             {
-                Console.WriteLine("1-й квадрант");
+                Console.WriteLine("1-Р№ РєРІР°РґСЂР°РЅС‚");
                 answer1++;
             }
             else if (x < 0 && y > 0)
             {
-                Console.WriteLine("2-й квадрант");
+                Console.WriteLine("2-Р№ РєРІР°РґСЂР°РЅС‚");
             }
             else if (x < 0 && y < 0)
             {
-                Console.WriteLine("3-й квадрант");
+                Console.WriteLine("3-Р№ РєРІР°РґСЂР°РЅС‚");
                 answer3++;
             }
             else if (x > 0 && y < 0)
             {
-                Console.WriteLine("4-й квадрант");
+                Console.WriteLine("4-Р№ РєРІР°РґСЂР°РЅС‚");
             }
         }
-        Console.WriteLine("Кол-во точек в 1-й квадранте: "+answer1+"\n"+ "Кол-во точек в 3-й квадранте: "+answer3);
+        Console.WriteLine("РљРѕР»-РІРѕ С‚РѕС‡РµРє РІ 1-Р№ РєРІР°РґСЂР°РЅС‚Рµ: "+answer1+"\n"+ "РљРѕР»-РІРѕ С‚РѕС‡РµРє РІ 3-Р№ РєРІР°РґСЂР°РЅС‚Рµ: "+answer3);
         // end
 
         return (answer1, answer3);
@@ -376,7 +376,7 @@ public class Program
             }
         }
         answerLength = Math.Round(answerLength, 2);
-        Console.WriteLine($"Точка {answer} : {answerLength}");
+        Console.WriteLine($"РўРѕС‡РєР° {answer} : {answerLength}");
         // end
 
         return (answer, answerLength);
@@ -418,7 +418,7 @@ public class Program
             if (!(m1 == 2 || m1 == 3) && !(m2 == 2 || m2 == 3) && !(m3 == 2 || m3 == 3) && !(m4 == 2 || m4 == 3))
                 answer++;
         }
-        Console.WriteLine("Число студентов: " + answer);
+        Console.WriteLine("Р§РёСЃР»Рѕ СЃС‚СѓРґРµРЅС‚РѕРІ: " + answer);
         // end
 
         return answer;
@@ -443,7 +443,7 @@ public class Program
             avg += (m1 + m2 + m3 + m4);
         }
         avg = Math.Round(avg / (4* n));
-        Console.WriteLine($"\nЧисло неуспевающих студентов {answer} и средний балл группы {avg}");
+        Console.WriteLine($"\Р§РёСЃР»Рѕ РЅРµСѓСЃРїРµРІР°СЋС‰РёС… СЃС‚СѓРґРµРЅС‚РѕРІ {answer} Рё СЃСЂРµРґРЅРёР№ Р±Р°Р»Р» РіСЂСѓРїРїС‹ {avg}");
         // end
 
         return (answer, avg);
@@ -534,11 +534,11 @@ public class Program
         // code here
         int k = 0;
         string input;
-        Console.WriteLine("Введите вес (для окончания ввода напишите exit):");
+        Console.WriteLine("Р’РІРµРґРёС‚Рµ РІРµСЃ (РґР»СЏ РѕРєРѕРЅС‡Р°РЅРёСЏ РІРІРѕРґР° РЅР°РїРёС€РёС‚Рµ exit):");
         
         while (true)
         {
-            Console.Write("Вес: ");
+            Console.Write("Р’РµСЃ: ");
             input = Console.ReadLine();
 
             if (input.ToLower() == "exit")
@@ -554,7 +554,7 @@ public class Program
             }
             else
             {
-                Console.WriteLine("Некорректный ввод, попробуйте снова");
+                Console.WriteLine("РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ, РїРѕРїСЂРѕР±СѓР№С‚Рµ СЃРЅРѕРІР°");
             }
         }
 
@@ -590,12 +590,12 @@ public class Program
         int answer = 0, n = 0;
 
         // code here
-        Console.WriteLine("Введите координаты точек (для окончания ввода напишите exit):");
+        Console.WriteLine("Р’РІРµРґРёС‚Рµ РєРѕРѕСЂРґРёРЅР°С‚С‹ С‚РѕС‡РµРє (РґР»СЏ РѕРєРѕРЅС‡Р°РЅРёСЏ РІРІРѕРґР° РЅР°РїРёС€РёС‚Рµ exit):");
 
         while (true)
         {
             n++;
-            Console.WriteLine($"Точка {n}");
+            Console.WriteLine($"РўРѕС‡РєР° {n}");
             Console.Write("X: ");
             string input1 = Console.ReadLine();
 
@@ -620,12 +620,12 @@ public class Program
                 }
                 else
                 {
-                    Console.WriteLine("Некорректный ввод, попробуйте снова");
+                    Console.WriteLine("РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ, РїРѕРїСЂРѕР±СѓР№С‚Рµ СЃРЅРѕРІР°");
                 }
             }
             else
             {
-                Console.WriteLine("Некорректный ввод, попробуйте снова");
+                Console.WriteLine("РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ, РїРѕРїСЂРѕР±СѓР№С‚Рµ СЃРЅРѕРІР°");
             }      
         }
 
@@ -661,11 +661,11 @@ public class Program
         int n = 0;
 
         // code here
-        Console.WriteLine("Введите результат спортсменов (для окончания ввода напишите exit):");
+        Console.WriteLine("Р’РІРµРґРёС‚Рµ СЂРµР·СѓР»СЊС‚Р°С‚ СЃРїРѕСЂС‚СЃРјРµРЅРѕРІ (РґР»СЏ РѕРєРѕРЅС‡Р°РЅРёСЏ РІРІРѕРґР° РЅР°РїРёС€РёС‚Рµ exit):");
 
         while (true)
         {
-            Console.Write("Результат: ");
+            Console.Write("Р РµР·СѓР»СЊС‚Р°С‚: ");
             string input = Console.ReadLine();
 
             if (input.ToLower() == "exit")
@@ -681,11 +681,11 @@ public class Program
             }
             else
             {
-                Console.WriteLine("Некорректный ввод, попробуйте снова");
+                Console.WriteLine("РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ, РїРѕРїСЂРѕР±СѓР№С‚Рµ СЃРЅРѕРІР°");
             }
         }
 
-        Console.WriteLine($"Лучший результат: {answer} с");
+        Console.WriteLine($"Р›СѓС‡С€РёР№ СЂРµР·СѓР»СЊС‚Р°С‚: {answer} СЃ");
         // end
 
         return answer;
