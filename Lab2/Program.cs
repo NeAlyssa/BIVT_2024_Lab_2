@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Diagnostics.Metrics;
 using System.Runtime.InteropServices;
 
@@ -32,7 +33,7 @@ public class Program
         //program.Task_2_8(10);
         //program.Task_2_9(10);
         //program.Task_2_10(10);
-        program.Task_2_11(10);
+        //program.Task_2_11(10);
         program.Task_2_12(10, 0);
         program.Task_2_13(10, 5, 0);
         //program.Task_3_1();
@@ -411,13 +412,25 @@ public class Program
     {
         int answer = 0;
         double avg = 0.0;
-
+        int s = 0;
+        int x1, x2, x3, x4;
         // code here;
-
+        for (int i = 0; i < n; i++)
+        {
+            Console.WriteLine("Введите оценки студента");
+            int.TryParse(Console.ReadLine(), out x1);
+            int.TryParse(Console.ReadLine(), out x2);
+            int.TryParse(Console.ReadLine(), out x3);
+            int.TryParse(Console.ReadLine(), out x4);
+            if (x1 < 3 || x2 < 3 || x3 < 3 || x4 < 3) answer++;
+            s += x1 + x2 + x3 + x4;
+        }
         // end
-
+        avg = s / (n * 4.0);
         // for test input in console: 5, 3, 3, 4, 5, 2, 4, 5, 5, 4, 5, 4, 2, 5, 3, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 2, 5, 2, 2, 4, 2, 5, 4, 5, 4
-
+        Console.WriteLine(answer);
+        Console.WriteLine(avg);
+       
         return (answer, avg);
     }
     public double Task_2_12(double r, int type)
@@ -425,17 +438,42 @@ public class Program
         double answer = 0;
 
         // code here;
+        if (r > 0)
+        {
+            switch (type)
+            {
+                case 0:
+                    answer = r * r; break;
+                case 1:
+                    answer = r * r * double.Pi; break;
+                case 2:
+                    answer = r * r * Math.Sqrt(3) / 4; break;
+                default: answer = 0; break;
 
+            }
+        }
         // end
 
-        return answer;
+        return Math.Round(answer,2);
     }
     public double Task_2_13(double A, double B, int type)
     {
         double answer = 0;
 
         // code here;
+        if (A>0 && B>0)
+        {
+            switch (type)
+            {
+                case 0:
+                    answer= A * B; break;
+                case 1:
+                    answer=Math.Abs(double.Pi*A*A-double.Pi*B); break;
+                case 2:
+                    answer=
+            }
 
+        }
         // end
 
         return answer;
