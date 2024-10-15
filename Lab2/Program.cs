@@ -27,10 +27,10 @@ public class Program
         //program.Task_2_3(10);
         //program.Task_2_4(5, 1, 2);
         //program.Task_2_5(10, 30);
-        program.Task_2_6(5);
-        program.Task_2_7(5);
-        program.Task_2_8(10);
-        program.Task_2_9(10);
+        //program.Task_2_6(5);
+        //program.Task_2_7(5);
+        //program.Task_2_8(10);
+        //program.Task_2_9(10);
         program.Task_2_10(10);
         program.Task_2_11(10);
         program.Task_2_12(10, 0);
@@ -300,23 +300,65 @@ public class Program
         int answer3 = 0;
 
         // code here
-
+        double x, y;
+        for (int i = 1; i <= n; i++)
+        {
+            Console.WriteLine("Введите x");
+            x = double.Parse(Console.ReadLine());
+            Console.WriteLine("Введите y");
+            y = double.Parse(Console.ReadLine());
+            if (x > 0 && y > 0)
+            {
+                Console.WriteLine("Первая четверть");
+                answer1++;
+            }
+            if (x < 0 && y > 0) Console.WriteLine("Вторая четверть");
+            if (x < 0 && y < 0)
+            {
+                Console.WriteLine("Третья четверть");
+                answer3++;
+            }
+            if (x > 0 && y < 0) Console.WriteLine("Четвертая четверть");
+        }
         // end
 
         // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
-
-        return (answer1, answer3);
+            return (answer1, answer3);
     }
     public (int, double) Task_2_8(int n)
     {
-        int answer = 0;
+        int answer = 1;
         double answerLength = double.MaxValue;
 
         // code here
-
+        double x, y;
+        double d = 0;
+        double m = 0;
+        Console.WriteLine("Введите x");
+        x = double.Parse(Console.ReadLine());
+        Console.WriteLine("Введите y");
+        y = double.Parse(Console.ReadLine());
+        d = Math.Sqrt(x * x + y * y);
+        for (int i = 2; i <= n; i++)
+        {
+            Console.WriteLine("Введите x");
+            x = double.Parse(Console.ReadLine());
+            Console.WriteLine("Введите y");
+            y = double.Parse(Console.ReadLine());
+            m = Math.Sqrt(x * x + y * y);
+            if (m<d)
+            {
+                answer = i;
+                d = m;
+            }
+            
+        }
+        answerLength = d;
+        Console.WriteLine(answer);
+        Console.WriteLine(answerLength);
         // end
 
-        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
+        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -0.5 
 
         return (answer, answerLength);
     }
@@ -325,9 +367,18 @@ public class Program
         double answer = double.MaxValue;
 
         // code here
+        double y;
+        y = double.Parse(Console.ReadLine());
+        double r = y;
+        for (int i=1; i<=n; i++)
+        {
+            y=double.Parse(Console.ReadLine());
+            r = Math.Max(r, y);
 
+        }
         // end
-
+        answer = r;
+        Console.WriteLine(answer);
         // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
 
         return answer;
@@ -337,9 +388,18 @@ public class Program
         int answer = 0;
 
         // code here;
-
+        double x;
+        for (int i=1; i<=n; i++)
+        {
+            Console.WriteLine("Введите оценки студента");
+            for (int r=1; r<=4; r++)
+            {
+                x=int.Parse(Console.ReadLine());
+                if (r == 4 && x > 3) answer++;
+            }
+        }
         // end
-
+        Console.WriteLine(answer);
         // for test input in console: 5, 3, 3, 4, 5, 2, 4, 5, 5, 4, 5, 4, 2, 5, 3, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 2, 5, 2, 2, 4, 2, 5, 4, 5, 4
 
         return answer;
