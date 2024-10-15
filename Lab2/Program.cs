@@ -31,7 +31,7 @@ public class Program
         //program.Task_2_7(5);
         //program.Task_2_8(10);
         //program.Task_2_9(10);
-        program.Task_2_10(10);
+        //program.Task_2_10(10);
         program.Task_2_11(10);
         program.Task_2_12(10, 0);
         program.Task_2_13(10, 5, 0);
@@ -388,14 +388,17 @@ public class Program
         int answer = 0;
 
         // code here;
-        double x;
-        for (int i=1; i<=n; i++)
+        int x1,x2,x3,x4;
+        for (int i=0; i<n; i++)
         {
             Console.WriteLine("Введите оценки студента");
-            for (int r=1; r<=4; r++)
+            int.TryParse(Console.ReadLine(), out x1);
+            int.TryParse(Console.ReadLine(), out x2);
+            int.TryParse(Console.ReadLine(), out x3);
+            int.TryParse(Console.ReadLine(), out x4);
+            if (x1>3 && x2>3 && x3>3 && x4>3)
             {
-                x=int.Parse(Console.ReadLine());
-                if (r == 4 && x > 3) answer++;
+                answer++;
             }
         }
         // end
