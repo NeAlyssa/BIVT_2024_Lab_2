@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Diagnostics.Metrics;
 using System.Globalization;
 using System.Runtime.InteropServices;
+using System.Text;
 
 public class Program
 {
@@ -227,6 +228,7 @@ public class Program
 
         // code here
         CultureInfo culture = new CultureInfo("en-US");
+        Encoding encoding = Encoding.UTF8;
         double x, y;
         for (int i = 0; i < n; i++)
         {
@@ -326,12 +328,11 @@ public class Program
 
         // code here
         double x, y;
-        CultureInfo culture = new CultureInfo("en-US");
 
         for (int i = 0; i < n; i++)
         {
-            double.TryParse(Console.ReadLine(), culture, out x);
-            double.TryParse(Console.ReadLine(), culture, out y);
+            double.TryParse(Console.ReadLine(), CultureInfo.InvariantCulture, out x);
+            double.TryParse(Console.ReadLine(), CultureInfo.InvariantCulture, out y);
 
             if (x > 0 && y > 0)
             {
