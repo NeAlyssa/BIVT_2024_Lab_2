@@ -227,13 +227,11 @@ public class Program
         int answer = 0;
 
         // code here
-        CultureInfo culture = new CultureInfo("en-US");
-        Encoding encoding = Encoding.UTF8;
         double x, y;
         for (int i = 0; i < n; i++)
         {
-            double.TryParse(Console.ReadLine(), culture, out x);
-            double.TryParse(Console.ReadLine(), culture, out y);
+            double.TryParse(Console.ReadLine(), CultureInfo.InvariantCulture, out x);
+            double.TryParse(Console.ReadLine(), CultureInfo.InvariantCulture, out y);
 
             if ((x - a) * (x - a) + (y - b) * (y - b) <= r * r)
                 answer++;
