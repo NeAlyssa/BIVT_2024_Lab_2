@@ -230,8 +230,8 @@ public class Program
         double x, y;
         for (int i = 0; i < n; i++)
         {
-            double.TryParse(Console.ReadLine(), CultureInfo.InvariantCulture, out x);
-            double.TryParse(Console.ReadLine(), CultureInfo.InvariantCulture, out y);
+            double.TryParse(Console.ReadLine(), culture, out x);
+            double.TryParse(Console.ReadLine(), culture, out y);
 
             if ((x - a) * (x - a) + (y - b) * (y - b) <= r * r)
                 answer++;
@@ -326,11 +326,12 @@ public class Program
 
         // code here
         double x, y;
+        CultureInfo culture = new CultureInfo("en-US");
 
         for (int i = 0; i < n; i++)
         {
-            double.TryParse(Console.ReadLine(), CultureInfo.InvariantCulture, out x);
-            double.TryParse(Console.ReadLine(), CultureInfo.InvariantCulture, out y);
+            double.TryParse(Console.ReadLine(), culture, out x);
+            double.TryParse(Console.ReadLine(), culture, out y);
 
             if (x > 0 && y > 0)
             {
