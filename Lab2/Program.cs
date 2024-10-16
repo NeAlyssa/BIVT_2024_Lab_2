@@ -40,7 +40,7 @@ public class Program
         //program.Task_3_2(1.5, 1.5, 1);
         //program.Task_3_2(1, 3, 1);
         //program.Task_3_3();
-        //program.Task_3_4(1, 2);
+        program.Task_3_4(1, 2);
         //program.Task_3_5(30);
         //program.Task_3_6();
         //program.Task_3_7();
@@ -358,6 +358,13 @@ public class Program
                 answer3++;
                 Console.WriteLine(3);
             }
+            if (x > 0 && y < 0){
+                Console.WriteLine(4);
+            }
+            if (x < 0 && y > 0){
+                answer3++;
+                Console.WriteLine(2);
+            }
         }
         Console.WriteLine($"first quarter: {answer1}, third quarter: {answer3}");
         // end
@@ -462,15 +469,19 @@ public class Program
         double answer = 0;
 
         // code here;
-        if (type == 1){
+        if (type < 0 || type > 2|| r <= 0){
+            return answer;
+        }
+        if (type == 0){
             answer = r*r;
         }
-        else if (type == 2){
+        else if (type == 1){
             answer = Math.PI*r*r;
         }
-        else{
+        else if (type == 2){
             answer = r*r*Math.Sqrt(3)*0.25;
         }
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -480,7 +491,20 @@ public class Program
         double answer = 0;
 
         // code here;
-
+        if (type < 0 || type > 2|| A <= 0 || B <= 0){
+            return answer;
+        }
+        if (type == 0){
+            answer = A*B;
+        }
+        else if (type == 1){
+            answer = Math.Abs(A*A*Math.PI - B*B*Math.PI);
+        }
+        else if (type == 2){
+            double s = (A+B+B)/2;
+            answer = Math.Sqrt(s*(s-A)*(s-B)*(s-B));
+        }
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -494,7 +518,15 @@ public class Program
         int n = 0;
         
         // code here
-
+        double x;
+        string inp = Console.ReadLine();
+        while (inp != "f"){
+            double.TryParse(inp, out x);
+            answer += x;
+            inp = Console.ReadLine();
+        }
+        answer /= 10.0;
+        Console.WriteLine(answer);
         // end
 
         // for test input in console: 168, 147, 174, 154, 180, 149, 166, 160, 175, 161
@@ -534,7 +566,21 @@ public class Program
         int answer = 0, n = 0;
 
         // code here
-
+        double x, y;
+        string x_str, y_str;
+        x_str = Console.ReadLine();
+        y_str = Console.ReadLine();
+        while (x_str != "f" && y_str != "f"){
+            double.TryParse(x_str, out x);
+            double.TryParse(y_str, out y);
+            
+            if ((x*x + y*y > r1*r1)&&(x*x + y*y < r2*r2)){
+                answer++;
+            }
+            x_str = Console.ReadLine();
+            y_str = Console.ReadLine();
+        }
+        Console.WriteLine(answer);
         // end
 
         // for test input in console: 1.2 0.7, 2 2, 4.5 0.1, -1 1.5, -0.5 -0.5
@@ -573,7 +619,34 @@ public class Program
         int answer1 = 0, answer3 = 0, n = 0;
 
         // code here
+        double x, y;
+        string x_str, y_str;
+        x_str = Console.ReadLine();
+        y_str = Console.ReadLine();
+        while (x_str != "f" && y_str != "f"){
+            double.TryParse(x_str, out x);
+            double.TryParse(y_str, out y);
+            
+            if (x > 0 && y > 0){
+                answer1++;
+                Console.WriteLine(1);
+            }
+            if (x < 0 && y < 0){
+                answer3++;
+                Console.WriteLine(3);
+            }
+            if (x > 0 && y < 0){
+                Console.WriteLine(4);
+            }
+            if (x < 0 && y > 0){
+                answer3++;
+                Console.WriteLine(2);
+            }
 
+            x_str = Console.ReadLine();
+            y_str = Console.ReadLine();
+        }
+        Console.WriteLine($"first quarter: {answer1}, third quarter: {answer3}");
         // end
 
         // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
@@ -614,7 +687,28 @@ public class Program
         int answer = 0, n = 0;
 
         // code here;
-
+        int g1, g2, g3, g4;
+        string G1, G2, G3, G4;
+        G1 = Console.ReadLine();
+        G2 = Console.ReadLine();
+        G3 = Console.ReadLine();
+        G4 = Console.ReadLine();
+        
+        while (G1 != "f" && G2 != "f" && G3 != "f" && G4 != "f"){
+            int.TryParse(Console.ReadLine(), out g1);
+            int.TryParse(Console.ReadLine(), out g2);
+            int.TryParse(Console.ReadLine(), out g3);
+            int.TryParse(Console.ReadLine(), out g4);
+            answer++;
+            if ( g1 > 3 && g2 > 3 && g3 > 3 && g4 > 3){
+                answer--;
+            }
+            G1 = Console.ReadLine();
+            G2 = Console.ReadLine();
+            G3 = Console.ReadLine();
+            G4 = Console.ReadLine();
+        }
+        Console.WriteLine($"answer: {answer}");
         // end
 
         // for test input in console: 5, 3, 3, 4, 5, 2, 4, 5, 5, 4, 5, 4, 2, 5, 3, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 2, 5, 2, 2, 4, 2, 5, 4, 5, 4
@@ -652,7 +746,23 @@ public class Program
         double answer = 0;
 
         // code here;
-
+        while (type >= 0 && type <= 2 && A > 0 && B > 0){
+            // if (type < 0 || type > 2|| A <= 0 || B <= 0){
+            //     return answer;
+            // }
+            if (type == 0){
+                answer = A*B;
+            }
+            else if (type == 1){
+                answer = Math.Abs(A*A*Math.PI - B*B*Math.PI);
+            }
+            else if (type == 2){
+                double s = (A+B+B)/2;
+                answer = Math.Sqrt(s*(s-A)*(s-B)*(s-B));
+            }
+            answer = Math.Round(answer, 2);
+            Console.WriteLine(answer);
+        }
         // end
         // answer should be equal to the task_2_13 answer
 
