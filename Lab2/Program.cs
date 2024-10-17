@@ -40,7 +40,7 @@ public class Program
         //program.Task_3_2(1.5, 1.5, 1);
         //program.Task_3_2(1, 3, 1);
         //program.Task_3_3();
-        program.Task_3_4(1, 2);
+        //program.Task_3_4(1, 2);
         //program.Task_3_5(30);
         //program.Task_3_6();
         //program.Task_3_7();
@@ -469,17 +469,20 @@ public class Program
         double answer = 0;
 
         // code here;
-        if (type < 0 || type > 2|| r <= 0){
-            return answer;
-        }
-        if (type == 0){
-            answer = r*r;
-        }
-        else if (type == 1){
-            answer = Math.PI*r*r;
-        }
-        else if (type == 2){
-            answer = r*r*Math.Sqrt(3)*0.25;
+        if (r > 0){
+            switch (type){
+                case 0:
+                    answer = r*r;
+                    break;
+                case 1:
+                    answer = Math.PI*r*r;
+                    break;
+                case 2:
+                    answer = r*r*Math.Sqrt(3)*0.25;
+                    break;
+                default:
+                    return answer;
+            }
         }
         answer = Math.Round(answer, 2);
         // end
@@ -491,18 +494,22 @@ public class Program
         double answer = 0;
 
         // code here;
-        if (type < 0 || type > 2|| A <= 0 || B <= 0){
-            return answer;
+        if (A > 0 && B > 0){
+        switch (type){
+            case 0:
+                answer = A*B;
+                break;
+            case 1:
+                answer = Math.Abs(A*A*Math.PI - B*B*Math.PI);
+                break;
+            case 2:
+                double s = (A+B+B)/2;
+                answer = Math.Sqrt(s*(s-A)*(s-B)*(s-B));
+                break;
+            default:
+                return answer;
+
         }
-        if (type == 0){
-            answer = A*B;
-        }
-        else if (type == 1){
-            answer = Math.Abs(A*A*Math.PI - B*B*Math.PI);
-        }
-        else if (type == 2){
-            double s = (A+B+B)/2;
-            answer = Math.Sqrt(s*(s-A)*(s-B)*(s-B));
         }
         answer = Math.Round(answer, 2);
         // end
@@ -747,19 +754,20 @@ public class Program
 
         // code here;
         while (type >= 0 && type <= 2 && A > 0 && B > 0){
-            // if (type < 0 || type > 2|| A <= 0 || B <= 0){
-            //     return answer;
-            // }
-            if (type == 0){
-                answer = A*B;
-            }
-            else if (type == 1){
-                answer = Math.Abs(A*A*Math.PI - B*B*Math.PI);
-            }
-            else if (type == 2){
-                double s = (A+B+B)/2;
-                answer = Math.Sqrt(s*(s-A)*(s-B)*(s-B));
-            }
+            switch (type){
+                case 0:
+                    answer = A*B;
+                    break;
+                case 1:
+                    answer = Math.Abs(A*A*Math.PI - B*B*Math.PI);
+                    break;
+                case 2:
+                    double s = (A+B+B)/2;
+                    answer = Math.Sqrt(s*(s-A)*(s-B)*(s-B));
+                    break;
+                default:
+                    return answer;
+                }   
             answer = Math.Round(answer, 2);
             Console.WriteLine(answer);
         }
