@@ -27,13 +27,13 @@ public class Program
         //program.Task_2_3(10);
         //program.Task_2_4(5, 1, 2);
         //program.Task_2_5(10, 30);
-        //program.Task_2_6(5);
-        //program.Task_2_7(5);
-        //program.Task_2_8(5);
-        //program.Task_2_9(10);
-        //program.Task_2_10(10);
+        //program.Task_2_6(3);
+        //program.Task_2_7(3);
+        //program.Task_2_8(3);
+        //program.Task_2_9(6);
+        //program.Task_2_10(6);
         //program.Task_2_11(10);
-        //program.Task_2_12(10, 0);
+        program.Task_2_12(10, 0);
         //program.Task_2_13(10, 5, 0);
         //program.Task_3_1();
         //program.Task_3_2(3, 2, 1);
@@ -210,7 +210,15 @@ public class Program
         int answer = 0;
 
         // code here
-
+        for (int i = 1; i <= n; i++)
+        {
+            Console.Write($"¬ведите координату x {i} точки: ");
+            double x = double.Parse(Console.ReadLine());
+            Console.Write($"¬ведите координату y {i} точки: ");
+            double y = double.Parse(Console.ReadLine());
+            if (x >= 0 && x <= Math.PI && y >= 0 && y <= Math.Sin(x)) answer++;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -219,9 +227,32 @@ public class Program
     {
         int answer1 = 0;
         int answer3 = 0;
+        int currentAnswer = 0;
 
         // code here
 
+        for (int i = 1; i <= n; i++)
+        {
+            Console.Write($"¬ведите координату x {i} точки: ");
+            double x = double.Parse(Console.ReadLine());
+            Console.Write($"¬ведите координату y {i} точки: ");
+            double y = double.Parse(Console.ReadLine());
+            if (x > 0 && y > 0)
+            {
+                currentAnswer = 1;
+                answer1++;
+            }
+            else if (x < 0 && y > 0) currentAnswer = 2;
+            else if (x < 0 && y < 0)
+            {
+                currentAnswer = 3;
+                answer3++;
+            }
+            else if (x > 0 && y < 0) currentAnswer = 4;
+            Console.WriteLine(currentAnswer);
+        }
+        Console.WriteLine(answer1);
+        Console.WriteLine(answer3);
         // end
 
         return (answer1, answer3);
@@ -233,6 +264,21 @@ public class Program
 
         // code here
 
+        for (int i = 1; i <= n; i++)
+        {
+            Console.Write($"¬ведите координату x {i} точки: ");
+            double x = double.Parse(Console.ReadLine());
+            Console.Write($"¬ведите координату y {i} точки: ");
+            double y = double.Parse(Console.ReadLine());
+            double length = Math.Sqrt(x * x + y * y);
+            if (length < answerLength)
+            {
+                answer = i;
+                answerLength = length;
+            }
+        }
+        Console.WriteLine(answer);
+        Console.WriteLine(Math.Round(answerLength, 2));
         // end
 
         return (answer, answerLength);
@@ -242,7 +288,13 @@ public class Program
         double answer = double.MaxValue;
 
         // code here
-
+        for (int i = 1; i <= n; i++)
+        {
+            Console.Write($"¬ведите результат {i}-го спортсмена: ");
+            double res = double.Parse(Console.ReadLine());
+            if (res < answer) answer = res;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -252,6 +304,18 @@ public class Program
         int answer = 0;
 
         // code here;
+        for (int i = 1; i <= n; i++)
+        {
+            bool flag = true;
+            for (int j = 1; j <= 4; j++)
+            {
+                Console.Write($"¬ведите оценку є{j} {i}-го студента: ");
+                int currentBall = int.Parse(Console.ReadLine());
+                if (currentBall < 4) flag = false;
+            }
+            if (flag) answer++;
+        }
+        Console.WriteLine(answer);
 
         // end
 
@@ -263,6 +327,21 @@ public class Program
         double avg = 0.0;
 
         // code here;
+        for (int i = 1; i <= n; i++)
+        {
+            bool flag = false;
+            for (int j = 1; j <= 4; j++)
+            {
+                Console.Write($"¬ведите оценку за є{j}-й экзамен {i}-го студента: ");
+                int currentBall = int.Parse(Console.ReadLine());
+                if (currentBall == 2) flag = true;
+                avg += currentBall;
+            }
+            if (flag) answer++;
+        }
+        avg /= n * 4;
+        Console.WriteLine(answer);
+        Console.WriteLine(avg);
 
         // end
 
@@ -273,7 +352,15 @@ public class Program
         double answer = 0;
 
         // code here;
-
+        if (r <= 0) return 0;
+        switch (type)
+        {
+            case 0: answer = r * r; break;
+            case 1: answer = Math.PI * r * r; break;
+            case 2: answer = r * r * Math.Sqrt(3)/4; break;
+            default: answer = 0; break;
+        }
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -283,6 +370,15 @@ public class Program
         double answer = 0;
 
         // code here;
+        if (A <= 0 || B <= 0) return 0;
+        switch (type)
+        {
+            case 0: answer = A * B; break;
+            case 1: answer = Math.Abs(Math.PI * A * A - Math.PI * B * B); break;
+            case 2: double p = (A + B + B) / 2;  answer = Math.Sqrt(p*(p-A)*(p-B)*(p-B)); break;
+            default: answer = 0; break;
+        }
+        answer = Math.Round(answer, 2);
 
         // end
 
