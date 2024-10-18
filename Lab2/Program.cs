@@ -213,7 +213,7 @@ public class Program
         double x, s = 0;
         for (int i = 0; i < n; i++)
         {
-            x = double.TryParse(Console.ReadLine());
+            double.TryParse(Console.ReadLine(), out x);
             s += x;
         }
         answer = s / n;
@@ -457,16 +457,19 @@ public class Program
         // code here;
         switch (type)
         {
-            case 1:
+            case 0:
                 answer = r * r;
                 break;
-            case 2:
+            case 1:
                 answer = Math.PI * r * r;
                 answer = Math.Round(answer, 2);
                 break;
-            case 3:
+            case 2:
                 answer = Math.Sqrt(3) * r * r / 4;
                 answer = Math.Round(answer, 2);
+                break;
+            default:
+                answer = 0;
                 break;
         }
         Console.WriteLine($"{answer}");
@@ -481,16 +484,19 @@ public class Program
         // code here;
         switch (type)
         {
-            case 1:
+            case 0:
                 answer = A * B;
                 break;
-            case 2:
+            case 1:
                 answer = Math.PI * Math.Abs(A * A - B * B);
                 answer = Math.Round(answer, 2);
                 break;
-            case 3:
+            case 2:
                 answer = A / 2 * Math.Sqrt(B * B - A * A / 4);
                 answer = Math.Round(answer, 2);
+                break;
+            default:
+                answer = 0;
                 break;
         }
         Console.WriteLine($"{answer}");
@@ -510,7 +516,7 @@ public class Program
         double x, s = 0;
         do
         {
-            x = double.TryParse(Console.ReadLine());
+            double.TryParse(Console.ReadLine(), out x);
             if (x == 0) break;
             s += x;
             n += 1;
