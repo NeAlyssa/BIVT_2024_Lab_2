@@ -15,8 +15,8 @@ public class Program
         // program.Task_1_2(0.9, 1.23);
         // program.Task_1_3(0.9, 1.23);
         // program.Task_1_4(0.9, 1.23, -0.1);
-        // program.Task_1_5(0.9, 1.23);
-        // program.Task_1_6(0.9, 1.23);
+        program.Task_1_5(0.9, 1.23);
+        program.Task_1_6(0.9, 1.23);
         // program.Task_1_7(0.9);
         // program.Task_1_8(0.9);
         // program.Task_1_9(0.9);
@@ -31,22 +31,22 @@ public class Program
         // program.Task_2_6(5);
         // program.Task_2_7(5);
         // program.Task_2_8(4);
-        // program.Task_2_9(10);
+        //program.Task_2_9(10);
         // program.Task_2_10(10);
         // program.Task_2_11(10);
         // program.Task_2_12(-0.75, 0);
-        program.Task_2_13(-0.75, 1, 0);
+        // program.Task_2_13(-0.75, 1, 0);
         //program.Task_3_1();
         //program.Task_3_2(3, 2, 1);
         //program.Task_3_2(1.5, 1.5, 1);
         //program.Task_3_2(1, 3, 1);
-        //program.Task_3_3();
+        program.Task_3_3();
         //program.Task_3_4(1, 2);
         //program.Task_3_5(30);
-        //program.Task_3_6();
+        program.Task_3_6();
         //program.Task_3_7();
         //program.Task_3_8();
-        //program.Task_3_9();
+        program.Task_3_9();
         //program.Task_3_10();
         //program.Task_3_11();
         //program.Task_3_12(10, 0);
@@ -113,7 +113,10 @@ public class Program
         bool answer = false;
 
         // code here
-        if (2 * r >= s) answer = true;
+        double radius = Math.Sqrt(r / Math.PI);
+        double sideSquare = Math.Sqrt(s);
+        double diagonalSquare = Math.Sqrt(2) * sideSquare;
+        if (diagonalSquare <= 2 * radius) answer = true;
         // end
 
         return answer;
@@ -123,7 +126,10 @@ public class Program
         bool answer = false;
 
         // code here
-        if (2 * r < s) answer = true;
+        double radius = Math.Sqrt(r / Math.PI);
+        double sideSquare = Math.Sqrt(s);
+        double diameterCircle = 2 * radius;
+        if (diameterCircle <= sideSquare) answer = true;
         // end
 
         return answer;
@@ -521,7 +527,21 @@ public class Program
         int n = 0;
 
         // code here
+        while (true)
+        {
+            string result = Console.ReadLine();
+            if (string.IsNullOrEmpty(result)) break;
+            
+            double foo = double.Parse(result, new CultureInfo("en-US"));
+            
+            if (foo < 30)
+            {
+                answer += 0.2;
+            }
 
+            n++;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -551,7 +571,24 @@ public class Program
         int answer = 0, n = 0;
 
         // code here
+        while (true)
+        {
+            string result = Console.ReadLine();
+            if (string.IsNullOrEmpty(result)) break;
+            string result2 = Console.ReadLine();
+            if (string.IsNullOrEmpty(result2)) break;
+            
+            double x = double.Parse(result, new CultureInfo("en-US"));
+            double y = double.Parse(result2, new CultureInfo("en-US"));
 
+            if ((x >= 0) && (x <= Math.PI) && (Math.Sin(x) >= y))
+            {
+                answer++;
+            }
+
+            n++;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -583,7 +620,18 @@ public class Program
         int n = 0;
 
         // code here
+        while (true)
+        {
+            string result = Console.ReadLine();
+            if (string.IsNullOrEmpty(result)) break;
+            double foo = double.Parse(result, new CultureInfo("en-US"));
 
+            if (foo < answer)
+            {
+                answer = foo;
+            }
+        }
+        Console.WriteLine("{0}", answer);
         // end
 
         return answer;
