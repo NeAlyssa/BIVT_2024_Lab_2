@@ -30,12 +30,12 @@ public class Program
         //program.Task_2_5(10, 30);
         //program.Task_2_6(5);
         //program.Task_2_7(5);
-        //program.Task_2_8(10);
+        //program.Task_2_8(5);
         //program.Task_2_9(10);
         //program.Task_2_10(10);
         //program.Task_2_11(10);
-        program.Task_2_12(10, 0);
-        program.Task_2_13(10, 5, 0);
+        //program.Task_2_12(10, 0);
+        //program.Task_2_13(10, 5, 0);
         //program.Task_3_1();
         //program.Task_3_2(3, 2, 1);
         //program.Task_3_2(1.5, 1.5, 1);
@@ -208,7 +208,7 @@ public class Program
             x = double.Parse(Console.ReadLine());
             Console.WriteLine("Введите y");
             y = double.Parse(Console.ReadLine());
-            if (Math.Abs(x-a)<=r && Math.Abs(y-b)<=r) answer++;
+            if ((a - x) * (a - x) + (b - y) * (b - y) <= r * r) answer++;
 
         }
         // end
@@ -267,7 +267,7 @@ public class Program
         for (int i = 1; i<=n;i++)
         {
             x= double.Parse(Console.ReadLine());
-            if (x>=norm) answer++;
+            if (x<=norm) answer++;
         }
         // end
         Console.WriteLine(answer);
@@ -322,7 +322,8 @@ public class Program
             if (x > 0 && y < 0) Console.WriteLine("Четвертая четверть");
         }
         // end
-
+        Console.WriteLine(answer1);
+        Console.WriteLine(answer3);
         // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
             return (answer1, answer3);
     }
@@ -356,7 +357,7 @@ public class Program
         }
         answerLength = d;
         Console.WriteLine(answer);
-        Console.WriteLine(answerLength);
+        Console.WriteLine(Math.Round(answerLength,2));
         // end
 
         // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -0.5 
@@ -369,16 +370,14 @@ public class Program
 
         // code here
         double y;
-        y = double.Parse(Console.ReadLine());
-        double r = y;
+        
         for (int i=1; i<=n; i++)
         {
             y=double.Parse(Console.ReadLine());
-            r = Math.Max(r, y);
+            if (y<answer) answer=y;
 
         }
         // end
-        answer = r;
         Console.WriteLine(answer);
         // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
 
@@ -466,17 +465,21 @@ public class Program
             switch (type)
             {
                 case 0:
+                    //Console.WriteLine("Площадь прямоугольника = ");
                     answer= A * B; break;
+                    
                 case 1:
-                    answer=Math.Abs(double.Pi*A*A-double.Pi*B); break;
+                    //Console.WriteLine("Площадь кольца = ");
+                    answer =Math.Abs(double.Pi*A*A-double.Pi*B*B); break;
                 case 2:
-                    answer=
+                    //Console.WriteLine("Площадь равнобедренного треугольника = ");
+                    answer = A / 2 * Math.Sqrt(B * B - A * A / 4); break;
             }
-
+           
         }
         // end
 
-        return answer;
+        return Math.Round(answer,2);
     }
     #endregion
 
@@ -500,7 +503,22 @@ public class Program
         int answer = 0, n = 0;
 
         // code here
+        string t;
+        double x, y;
+        for (; ;)
+        { 
+        Console.WriteLine("Введите x или stop, если хотите завершить");
+        t = Console.ReadLine();
+        if (double.TryParse(t, out x))
+        {
+            Console.WriteLine("Введите y");
+            y = double.Parse(Console.ReadLine());
+            if ((a - x) * (a - x) + (b - y) * (b - y) <= r * r) answer++;
+        }
+        else break;
 
+        }
+        Console.WriteLine(answer);
         // end
 
         // for test input in console: 1.2 0.7, 2 2, 4.5 0.1, -1 1.5, -2.5 -0.5
@@ -538,9 +556,21 @@ public class Program
     public int Task_3_5(double norm)
     {
         int answer = 0, n = 0;
-
+        double x;
+        string t;
         // code here
+        for (; ; )
+        {
+            Console.WriteLine("Введите результат спортсмена или stop, если хотите завершить");
+            t = Console.ReadLine();
+            if (double.TryParse(t, out x))
+            {
+                if (x <= norm) answer++;
+            }
+            else break;
 
+        }
+        Console.WriteLine(answer);
         // end
 
         // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
@@ -576,11 +606,32 @@ public class Program
     }
     public (int, double) Task_3_8()
     {
-        int answer = 0, n = 0;
+        int answer = 1, n = 0;
         double answerLength = double.MaxValue;
-
+        double x, y, d;
+        string t;
         // code here
+        for (int i=1; ;i++ )
+        {
+            Console.WriteLine("Введите x или stop, если хотите завершить");
+            t = Console.ReadLine();
+            if (double.TryParse(t, out x))
+            {
+                Console.WriteLine("Введите y");
+                y = double.Parse(Console.ReadLine());
+                d = Math.Sqrt(x * x + y * y);
+                if (d < answerLength)
+                {
+                    answerLength = d;
+                    answer = i;
+                }
+            }
+            else break;
 
+        }
+
+        Console.WriteLine(answer);
+        Console.WriteLine(Math.Round(answerLength,2));
         // end
 
         // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
@@ -619,11 +670,31 @@ public class Program
     {
         int answer = 0, n = 0;
         double avg = 0.0;
+        int s = 0;
+        int x1, x2, x3, x4;
+        string t;
+        // code here
+        for (int i=1; ;i++)
+        {
+            Console.WriteLine("Введите оценки студента или stop, если хотите завершить");
+            t = Console.ReadLine();
+            if (int.TryParse(t, out x1))
+            {
+                int.TryParse(Console.ReadLine(), out x2);
+                int.TryParse(Console.ReadLine(), out x3);
+                int.TryParse(Console.ReadLine(), out x4);
+                if (x1 < 3 || x2 < 3 || x3 < 3 || x4 < 3) answer++;
+                s += x1 + x2 + x3 + x4;
+                n++;
+            }
+            else break;
 
-        // code here;
-
+        }
         // end
-
+        avg = s / (n * 4.0);
+        // end
+        Console.WriteLine(answer);
+        Console.WriteLine(avg);
         // for test input in console: 5, 3, 3, 4, 5, 2, 4, 5, 5, 4, 5, 4, 2, 5, 3, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 2, 5, 2, 2, 4, 2, 5, 4, 5, 4
         // answer should be equal to the task_2_11 answer
 
