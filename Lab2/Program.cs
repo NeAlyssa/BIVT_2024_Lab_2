@@ -28,7 +28,7 @@ public class Program
         //program.Task_2_3(10);
         //program.Task_2_4(5, 1, 2);
         //program.Task_2_5(10, 30);
-        //program.Task_2_6(3);
+        program.Task_2_6(5);
         //program.Task_2_7(3);
         //program.Task_2_8(5);
         //program.Task_2_9(6);
@@ -43,7 +43,7 @@ public class Program
         //program.Task_3_3();
         //program.Task_3_4(1, 2);
         //program.Task_3_5(30);
-        program.Task_3_6();
+        //program.Task_3_6();
         //program.Task_3_7();
         //program.Task_3_8();
         //program.Task_3_9();
@@ -343,7 +343,7 @@ public class Program
         {
             Console.WriteLine("Введите результат участника");
             double.TryParse(Console.ReadLine(), out rslt);
-            if (rslt >= norm) answer++;
+            if (rslt <= norm) answer++;
         }
         Console.WriteLine("Нормотив выполнили {0} участников из {1}", answer, n);
         // end
@@ -363,7 +363,7 @@ public class Program
             double.TryParse(Console.ReadLine(), out x);
             Console.WriteLine("Введите y");
             double.TryParse(Console.ReadLine(), out y);
-            if(x >= 0 && x <= Math.PI && y <= Math.Sin(x)) answer++;
+            if(x >= 0 && y >= 0 && x <= Math.PI && y <= Math.Sin(x)) answer++;
         }
         // end
         Console.WriteLine(answer);
