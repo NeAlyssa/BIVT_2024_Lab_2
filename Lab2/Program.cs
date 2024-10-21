@@ -228,11 +228,11 @@ public class Program
 
         // code here
         double x;
-        for (int i = 0; i<10;i++){
+        for (int i = 0; i<n;i++){
             double.TryParse(Console.ReadLine(), out x);
             answer += x;
         }
-        answer /= 10.0;
+        answer /= n;
         Console.WriteLine(answer);
         // end
 
@@ -427,9 +427,8 @@ public class Program
             int.TryParse(Console.ReadLine(), out g2);
             int.TryParse(Console.ReadLine(), out g3);
             int.TryParse(Console.ReadLine(), out g4);
-            answer++;
             if ( g1 > 3 && g2 > 3 && g3 > 3 && g4 > 3){
-                answer--;
+                answer++;
             }
         }
         Console.WriteLine($"answer: {answer}");
@@ -706,9 +705,8 @@ public class Program
             int.TryParse(Console.ReadLine(), out g2);
             int.TryParse(Console.ReadLine(), out g3);
             int.TryParse(Console.ReadLine(), out g4);
-            answer++;
             if ( g1 > 3 && g2 > 3 && g3 > 3 && g4 > 3){
-                answer--;
+                answer++;
             }
             G1 = Console.ReadLine();
             G2 = Console.ReadLine();
