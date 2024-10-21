@@ -217,7 +217,7 @@ public class Program
         }
 
         answer = sum / n;
-        Console.WriteLine("\Средний рост класса: " + answer);
+        Console.WriteLine("\nСредний рост класса: " + answer);
         // end
 
         return answer;
@@ -443,7 +443,7 @@ public class Program
             avg += (m1 + m2 + m3 + m4);
         }
         avg = Math.Round(avg / (4* n));
-        Console.WriteLine($"\Число неуспевающих студентов {answer} и средний балл группы {avg}");
+        Console.WriteLine($"\nЧисло неуспевающих студентов {answer} и средний балл группы {avg}");
         // end
 
         return (answer, avg);
