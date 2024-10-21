@@ -28,7 +28,7 @@ public class Program
         //program.Task_2_3(10);
         //program.Task_2_4(5, 1, 2);
         //program.Task_2_5(10, 30); 
-        //program.Task_2_6(5); 
+        program.Task_2_6(5); 
         //program.Task_2_7(5);
         //program.Task_2_8(4);
         //program.Task_2_9(10);
@@ -47,7 +47,7 @@ public class Program
         //program.Task_3_7();
         //program.Task_3_8();
         //program.Task_3_9();
-        program.Task_3_10();
+        //program.Task_3_10();
         //program.Task_3_11();
         //program.Task_3_12(10, 0);
         //program.Task_3_13(10, 5, 0);
@@ -142,7 +142,7 @@ public class Program
         bool answer = false;
 
         // code here
-        //r круг s квадрат
+        //r РєСЂСѓРі s РєРІР°РґСЂР°С‚
         double S = 0, R = 0;
         R = 2 * Math.Sqrt(r / Math.PI);
         S = Math.Sqrt(s * 2.0);
@@ -234,7 +234,7 @@ public class Program
         {
             answer = 1;
         }
-        else if (1 < x && x <= 1)
+        else if (-1 < x && x <= 1)
         {
             answer = -x;
         }
@@ -366,7 +366,7 @@ public class Program
         {
             double.TryParse(Console.ReadLine(), out x);
             double.TryParse(Console.ReadLine(), out y);
-            if ( y >= 0 && y <= Math.Abs(Math.Sin(x)))
+            if ( y >= 0 && y <= Math.Sin(x) && (x > 0) && (x < Math.PI))
             {
                 answer++;
             }
