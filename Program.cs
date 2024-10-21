@@ -110,7 +110,7 @@ public class Program
     public bool Task_1_5(double r, double s)
     {
         bool answer = false;
-        double R = 4 * (r / Math.Round(Math.PI, 2)); //R = ãèïîòåíóçà ïðÿìîóãîëüíîãî òðåóãîëüíèêà è äèàìåòð â êâàäðàòå
+        double R = 4 * (r / Math.Round(Math.PI, 2)); //R = Ã£Ã¨Ã¯Ã®Ã²Ã¥Ã­Ã³Ã§Ã  Ã¯Ã°Ã¿Ã¬Ã®Ã³Ã£Ã®Ã«Ã¼Ã­Ã®Ã£Ã® Ã²Ã°Ã¥Ã³Ã£Ã®Ã«Ã¼Ã­Ã¨ÃªÃ  Ã¨ Ã¤Ã¨Ã Ã¬Ã¥Ã²Ã° Ã¢ ÃªÃ¢Ã Ã¤Ã°Ã Ã²Ã¥
         if (R >= s + s)
         {
             answer = true;
@@ -300,7 +300,7 @@ public class Program
     {
         int answer = 0;
         double answerLength = double.MaxValue;
-        for (int i = 0; i < n; i++)
+        for (int i = 1; i <= n; i++)
         {
             double x = Convert.ToDouble(Console.ReadLine());
             double y = Convert.ToDouble(Console.ReadLine());
@@ -422,8 +422,6 @@ public class Program
             string input1 = Console.ReadLine();
             string input2 = Console.ReadLine();
             if (!double.TryParse(input1, out x) || !double.TryParse(input2, out y)) break;
-            x = double.Parse(input1);
-            y = double.Parse(input2);
             if ((x - a) * (x - a) + (y - b) * (y - b) < r * r) count++;
         }
         return count;
@@ -465,7 +463,6 @@ public class Program
         {
             string input = Console.ReadLine();
             if (!double.TryParse(input, out run)) break;
-            run = double.Parse(input);
             if (run <= norm) count++;
         }
         return (count);
@@ -503,14 +500,12 @@ public class Program
         int answer = 0;
         double x, y;
         double answerLength = double.MaxValue;
-        int count = 0;
+        int count = 1;
         while (true)
         {
             string input1 = Console.ReadLine();
             string input2 = Console.ReadLine();
             if (!double.TryParse(input1, out x) || !double.TryParse(input2, out y)) break;
-            x = double.Parse(input1);
-            y = double.Parse(input2);
             if (Math.Sqrt(x * x + y * y) < answerLength)
             {
                 answerLength = Math.Sqrt(x * x + y * y);
@@ -567,7 +562,6 @@ public class Program
                     n = false;
                     break;
                 }
-                mark = int.Parse(input);
                 if (mark == 2 && student == true)
                 {
                     student = false;
