@@ -103,7 +103,26 @@ public class Program
         double answer = 0;
 
         // code here
-        answer = Math.Max(Math.Min(a, b), c);
+        if (a < b)
+        {
+            if (a > c)
+            {
+                answer = a;
+            } else
+            {
+                answer = c;
+            }
+        } else
+        {
+            if (b > c)
+            {
+                answer = b;
+            }
+            else
+            {
+                answer = c;
+            }
+        }
         // end
 
         return answer;
@@ -218,7 +237,7 @@ public class Program
         // code here
         double x, y;
         for (int i = 0; i < n; i++)
-        { 
+        {
             x = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             y = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             if ((x - a) * (x - a) + (y - b) * (y - b) < r * r)
@@ -388,7 +407,8 @@ public class Program
         for (int i = 0; i < n; i++)
         {
             result = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            answer = Math.Min(answer, result);
+            if (result < answer)
+                answer = result;
 
         }
         Console.WriteLine(answer);
@@ -414,7 +434,7 @@ public class Program
                     has23 = true;
                 }
             }
-            if (has23)
+            if (!has23)
                 answer++;
         }
         Console.WriteLine("answer={0}", answer);
@@ -446,7 +466,7 @@ public class Program
             if (has2)
                 answer++;
         }
-        avg = sum / 40.0;
+        avg = sum / (n * 4.0);
         Console.WriteLine("answer={0} avg={1}", answer, avg);
         // end
 
@@ -542,9 +562,9 @@ public class Program
         // каждая координата в отдельной строке
         // чтобы закончить ввод, введите некорректное значение
         // или нажмите Enter после конца ввода
-        while (double.TryParse(Console.ReadLine(), 
+        while (double.TryParse(Console.ReadLine(),
             CultureInfo.InvariantCulture, out x)
-            && double.TryParse(Console.ReadLine(), 
+            && double.TryParse(Console.ReadLine(),
             CultureInfo.InvariantCulture, out y))
         {
             if ((x - a) * (x - a) + (y - b) * (y - b) <= r * r)
@@ -659,9 +679,9 @@ public class Program
         // чтобы закончить ввод, введите некорректное значение
         // или нажмите Enter после конца ввода
         int idx = 0;
-        while (double.TryParse(Console.ReadLine(), 
-            CultureInfo.InvariantCulture, out x) 
-            && double.TryParse(Console.ReadLine(), 
+        while (double.TryParse(Console.ReadLine(),
+            CultureInfo.InvariantCulture, out x)
+            && double.TryParse(Console.ReadLine(),
             CultureInfo.InvariantCulture, out y))
         {
             idx++;
@@ -710,7 +730,7 @@ public class Program
                 has23 = true;
             if (cnt == 4)
             {
-                if (has23)
+                if (!has23)
                     answer++;
                 cnt = 0;
                 has23 = false;
@@ -765,7 +785,7 @@ public class Program
         double answer = 0;
 
         // code here;
-        
+
         // end
         // answer should be equal to the task_2_12 answer
 
