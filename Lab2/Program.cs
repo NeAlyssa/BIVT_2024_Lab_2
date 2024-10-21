@@ -31,7 +31,7 @@ public class Program
         //program.Task_2_4(5, 1, 3);
         //program.Task_2_5(10, 30);
         //program.Task_2_6(5);
-        //program.Task_2_7(5);
+        //program.Task_2_7(3);
         //program.Task_2_8(5);
         //program.Task_2_9(6);
         //program.Task_2_10(8);
@@ -42,7 +42,7 @@ public class Program
         //program.Task_3_2(3, 2, 1);
         //program.Task_3_2(1.5, 1.5, 1);
         //program.Task_3_2(1, 3, 1);
-        program.Task_3_3();
+        //program.Task_3_3();
         //program.Task_3_4(1, 2);
         //program.Task_3_5(30);
         //program.Task_3_6();
@@ -321,13 +321,13 @@ public class Program
                 Console.WriteLine("квадрант 1");
                 answer1++;
             }
-            if (x > 0 && y < 0) Console.WriteLine("квадрант 2");
-            if (x < 0 && y > 0)
+            if (x > 0 && y < 0) Console.WriteLine("квадрант 4");
+            if (x < 0 && y < 0)
             {
                 Console.WriteLine("квадрант 3");
                 answer3++;
-                if (x < 0 && y < 0) Console.WriteLine("квадрант 4");
-            }
+            } 
+            if (x < 0 && y > 0) Console.WriteLine("квадрант 2");
         }
         Console.WriteLine(answer1);
         Console.WriteLine(answer3);
