@@ -1,0 +1,19 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AConsole_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2024_002E2_003Fresharper_002Dhost_003FSourcesCache_003F2ccd2056ec55b7b67558d52e32a887ed5ac7e346fc429b218c188d0a99cb5be_003FConsole_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AMath_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2024_002E2_003Fresharper_002Dhost_003FSourcesCache_003F57a1f82f884de2785cf31f799c2f1a6b36437f82afdb52feb11e5e580572c_003FMath_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=666f830d_002D8137_002D4411_002Da7d8_002Db9a673519625/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Task_1_1Test" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;MSTest::F8DEB444-212B-48DA-A28F-BB869A620AD1::net8.0::Tests.ProgramTests.Task_1_1Test&lt;/TestId&gt;
+    &lt;TestId&gt;MSTest::F8DEB444-212B-48DA-A28F-BB869A620AD1::net8.0::Tests.ProgramTests.Task_1_2Test&lt;/TestId&gt;
+    &lt;TestId&gt;MSTest::F8DEB444-212B-48DA-A28F-BB869A620AD1::net8.0::Tests.ProgramTests.Task_1_3Test&lt;/TestId&gt;
+    &lt;TestId&gt;MSTest::F8DEB444-212B-48DA-A28F-BB869A620AD1::net8.0::Tests.ProgramTests.Task_1_4Test&lt;/TestId&gt;
+    &lt;TestId&gt;MSTest::F8DEB444-212B-48DA-A28F-BB869A620AD1::net8.0::Tests.ProgramTests.Task_1_5Test&lt;/TestId&gt;
+    &lt;TestId&gt;MSTest::F8DEB444-212B-48DA-A28F-BB869A620AD1::net8.0::Tests.ProgramTests.Task_1_6Test&lt;/TestId&gt;
+    &lt;TestId&gt;MSTest::F8DEB444-212B-48DA-A28F-BB869A620AD1::net8.0::Tests.ProgramTests.Task_1_7Test&lt;/TestId&gt;
+    &lt;TestId&gt;MSTest::F8DEB444-212B-48DA-A28F-BB869A620AD1::net8.0::Tests.ProgramTests.Task_1_8Test&lt;/TestId&gt;
+    &lt;TestId&gt;MSTest::F8DEB444-212B-48DA-A28F-BB869A620AD1::net8.0::Tests.ProgramTests.Task_1_9Test&lt;/TestId&gt;
+    &lt;TestId&gt;MSTest::F8DEB444-212B-48DA-A28F-BB869A620AD1::net8.0::Tests.ProgramTests.Task_1_10Test&lt;/TestId&gt;
+    &lt;TestId&gt;MSTest::F8DEB444-212B-48DA-A28F-BB869A620AD1::net8.0::Tests.ProgramTests.Task_2_12Test&lt;/TestId&gt;
+    &lt;TestId&gt;MSTest::F8DEB444-212B-48DA-A28F-BB869A620AD1::net8.0::Tests.ProgramTests.Task_2_13Test&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
