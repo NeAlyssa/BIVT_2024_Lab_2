@@ -40,13 +40,13 @@ public class Program
         //program.Task_3_2(1.5, 1.5, 1);
         //program.Task_3_2(1, 3, 1);
         //program.Task_3_3();
-        //program.Task_3_4(1, 2);
+        program.Task_3_4(1, 2);
         //program.Task_3_5(30);
         //program.Task_3_6();
         //program.Task_3_7();   
         //program.Task_3_8();
         //program.Task_3_9();
-        program.Task_3_10();
+        //program.Task_3_10();
         //program.Task_3_11();
         //program.Task_3_12(10, 0);
         //program.Task_3_13(10, 5, 0);
@@ -254,7 +254,7 @@ public class Program
         for (int i = 1; i <= n; i++)
         {
             double res = double.Parse(Console.ReadLine());
-            if (res >= norm) answer++;
+            if (res <= norm) answer++;
         }
         // end
 
@@ -483,7 +483,15 @@ public class Program
         int answer = 0, n = 0;
 
         // code here
-
+        while (true)
+        {
+            string strX = Console.ReadLine();
+            bool result = double.TryParse(strX, out double x);
+            if (!result) break;
+            double y = double.Parse(Console.ReadLine());
+            if (((x * x + y * y) >= r1 * r1) && ((x * x + y * y) <= r2 * r2)) answer++;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -510,37 +518,33 @@ public class Program
     }
     public (int, int) Task_3_7()
     {
-        int answer1 = 0;
-        int answer3 = 0;
-        int canswer = 0;
-        int i = 1;
+        int answer1 = 0, answer3 = 0, n = 0;
 
         // code here
-        double x = double.Parse(Console.ReadLine());
-        double y = double.Parse(Console.ReadLine());
-        while (true) 
+        while (true)
         {
-
-            if (x == 0 & y == 0) { Console.WriteLine("break"); break; }
-            else
+            string strX = Console.ReadLine();
+            bool result = double.TryParse(strX, out double x);
+            if (!result) break;
+            double y = double.Parse(Console.ReadLine());
+            if (x > 0 && y > 0)
             {
-                x = double.Parse(Console.ReadLine());
-                y = double.Parse(Console.ReadLine());
-                if (x > 0 && y > 0)
-                {
-                    canswer = 1;
-                    answer1++;
-                }
-                else if (x < 0 && y > 0) canswer = 2;
-                else if (x < 0 && y < 0)
-                {
-                    canswer = 3;
-                    answer3++;
-                }
-                else if (x > 0 && y < 0) canswer = 4;
+                Console.WriteLine(1);
+                answer1++;
             }
-            Console.WriteLine(canswer);
-            i++;
+            else if (x < 0 && y > 0)
+            {
+                Console.WriteLine(2);
+            }
+            else if (x < 0 && y < 0)
+            {
+                Console.WriteLine(2);
+                answer3++;
+            }
+            else if (x > 0 && y < 0)
+            {
+                Console.WriteLine(2);
+            }
         }
         Console.WriteLine(answer1);
         Console.WriteLine(answer3);
