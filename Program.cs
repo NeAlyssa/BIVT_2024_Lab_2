@@ -28,7 +28,7 @@ public class Program
         //program.Task_2_2(5, 1.5, 1.5, 1);
         //program.Task_2_2(5, 3, 2, 1);
         //program.Task_2_2(5, 1, 3, 1);
-        //program.Task_2_3(10);
+        program.Task_2_3(6);
         //program.Task_2_4(3, 1, 2);
         //program.Task_2_5(6,25.2);
         //program.Task_2_6(3);
@@ -51,7 +51,7 @@ public class Program
         //program.Task_3_8();
         //program.Task_3_9();
         //program.Task_3_10();
-        program.Task_3_11();
+        //program.Task_3_11();
         //program.Task_3_12(10, 0);
         //program.Task_3_13(10, 5, 0);
     }
@@ -259,7 +259,12 @@ public class Program
         double answer = 0;
 
         // code here
-    
+        for (int i = 0; i < n; i++)
+        {
+            answer = answer + double.Parse(Console.ReadLine());
+        }
+        answer = answer / n;
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -296,7 +301,7 @@ public class Program
         // code here
         for (int i = 0; i < n; i++)
         {
-            if (double.Parse(Console.ReadLine()) > 30)
+            if (double.Parse(Console.ReadLine()) < 30)
             {
                 s++;
             }
